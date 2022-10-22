@@ -1,0 +1,44 @@
+{
+  "name": "jas",
+  "version": "1.0.0",
+  "description": "Simple job application system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node server/index.js",
+    "dev": "nodemon --experimental-specifier-resolution=node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nziranziza/jas.git"
+  },
+  "keywords": [
+    "Job",
+    "application",
+    "system",
+    "recruiting",
+    "hr",
+    "human",
+    "resources",
+    "applicants"
+  ],
+  "author": "Nziranziza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nziranziza/jas/issues"
+  },
+  "homepage": "https://github.com/Nziranziza/jas#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "type": "module"
+}

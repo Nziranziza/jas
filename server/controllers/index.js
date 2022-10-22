@@ -1,0 +1,1 @@
+export * as applicationController from './application';
