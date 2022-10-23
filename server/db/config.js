@@ -1,10 +1,16 @@
 import { Sequelize } from "sequelize";
 
-const { DB_NAME, DB_USER, DB_HOST, DB_PASSWORD } = process.env;
+const { DB_NAME, DB_USER, DB_HOST, DB_PASSWORD, DATABASE_URL } = process.env;
 
-const sequelizeConnection = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host: DB_HOST,
-  dialect: "postgres",
-});
+let sequelizeConnection;
+
+if(!DATABASE_URL) {
+  sequelizeConnection = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+    host: DB_HOST,
+    dialect: "postgres",
+  });
+} else {
+  sequelizeConnection = new Sequelize(DATABASE_URL)
+}
 
 export default sequelizeConnection;
