@@ -1,0 +1,23 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  input {
+    border: 1px solid #dad7cd;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    &:focus {
+      border-color: #457b9d;
+    }
+  }
+  &.error {
+    input {
+      border-color: #e63946;
+    }
+  }
+  .error {
+    color: #e63946;
+    margin-left: 8px;
+    font-size: small;
+  }
+}
