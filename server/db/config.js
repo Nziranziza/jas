@@ -8,12 +8,6 @@ if(!DATABASE_URL) {
   sequelizeConnection = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
     host: DB_HOST,
     dialect: "postgres",
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
   });
 } else {
   sequelizeConnection = new Sequelize(DATABASE_URL, {

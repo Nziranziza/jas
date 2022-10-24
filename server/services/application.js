@@ -1,8 +1,10 @@
 import { Application } from "../db/models";
 
-export const getAll = async ({ limit = 10 } = {}) => {
+export const getAll = async ({ limit = 10, page = 1 } = {}) => {
+  const offset = (page - 1) * limit;
   const data = await Application.findAll({
     limit,
+    offset,
     order: [["name", "ASC"]],
   });
   return data;
@@ -19,3 +21,7 @@ export const update = async (id, payload) => {
   }
   return application.update(payload);
 };
+
+export const getById = async (id) => {
+  return Application.findByPk(id)
+}

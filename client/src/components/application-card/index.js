@@ -1,26 +1,31 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import "./style.scss";
+import { applicationStatuses } from '../../constants';
 
-const applicationStatuses = ["pending", "dropped", "passed"];
-
-export function ApplicationCard({ name, cvUrl, status, onStatusChange = () => {} }) {
+export function ApplicationCard({ id, name, cvUrl, status, onStatusChange = () => {} }) {
   const [_status, setStatus] = useState(status);
+  const navigate = useNavigate();
 
   const onSelect = (e) => {
     setStatus(e.target.value)
     onStatusChange(e.target.value)
   }
 
+  const onClick = () => {
+    navigate(`applications/${id}`)
+  }
+
   return (
-    <div className="application-card">
+    <div className="application-card" onClick={onClick}>
       <div className="application-item">
         <span className="label">Applicant name:</span>
         <span>{name}</span>
       </div>
       <div className="application-item">
         <span className="label">CV:</span>
-        <a href={cvUrl}>{cvUrl}</a>
+        <a href={cvUrl} target="_blank" rel="noreferrer">{cvUrl}</a>
       </div>
       <div>
         <span className="label">status:</span>

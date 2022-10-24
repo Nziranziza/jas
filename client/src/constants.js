@@ -1,0 +1,1 @@
+export const applicationStatuses = ["pending", "dropped", "passed"];
