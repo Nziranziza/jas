@@ -3,9 +3,9 @@
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
   .application-item {
     margin-bottom: 10px;
+    display: block;
   }
   select {
     transition: all 0.3s ease-in-out;
